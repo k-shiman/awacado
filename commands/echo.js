@@ -9,8 +9,8 @@ module.exports = {
 		option.setName('input')
 			.setDescription('The input to echo back')),
 	async execute(interaction) {
-		const input = interaction.options.getUser('input');
-
+		const input = interaction.options.getString('input');
         await interaction.reply(input);
 	},
 };
+
