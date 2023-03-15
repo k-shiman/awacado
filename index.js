@@ -4,8 +4,11 @@ const path = require('node:path');
 require('dotenv').config();
 const { Collection } = require('discord.js')
 const { Client, Events, GatewayIntentBits } = require('discord.js');
-const { token } = process.env;
-
+const { token, OPENAI_API_KEY } = process.env;
+//OPENAI paremeters
+const openai = require('openai');
+openai.apiKey = OPENAI_API_KEY
+const chatCommand = require('./commands/chat');
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -37,28 +40,5 @@ for (const file of commandFiles) {
 		console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
 	}
 }
-// When the client is ready, run this code (only once)
-// We use 'c' for the event parameter to keep it separate from the already defined 'client' 
-// client.once(Events.ClientReady, c => {
-// 	console.log(`Ready! Logged in as ${c.user.tag}`);
-// });
-
-// client.on(Events.InteractionCreate, async interaction => {
-// 	if (!interaction.isChatInputCommand()) return;
-
-// 	const command = interaction.client.commands.get(interaction.commandName);
-
-// 	if (!command) {
-// 		console.error(`No command matching ${interaction.commandName} was found.`);
-// 		return;
-// 	}
-
-// 	try {
-// 		await command.execute(interaction);
-// 	} catch (error) {
-// 		console.error(error);
-// 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-// 	}
-// });
-// Log in to Discord with your client's token
+console.log(process.env.OPENAI_API_KEY);
 client.login(token);
