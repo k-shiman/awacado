@@ -15,4 +15,4 @@ A Discord bot written in JavaScript using the discord.js library is a program de
 · chat  : Responds to user prompts with random messages(Note: in progress).
 
 
-The bot's files are organized into separate folders, making it easy to create, modify, and delete commands and features without interfering with existing functionality. The use of the discord.js library simplifies the interaction with the Discord API, making it easier for developers to create custom commands and automate tasks on the platform.
+The bot's files are organized into separate folders, making it easy to create, modify, and delete commands and features without interfering with existing functionality. The use of the discord.js library simplifies the interaction with the Discord API, making it easier for developers to create custom commands and automate tasks on the platform. This project is still in progress.
