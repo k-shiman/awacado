@@ -4,7 +4,7 @@ const axios = require('axios');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('chat')
-        .setDescription('Chat with an AI')
+        .setDescription('Responds to user prompts with random messages!')
         .addStringOption(option =>
             option.setName('input')
                 .setDescription('Enter your prompt here')

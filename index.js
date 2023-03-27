@@ -40,5 +40,4 @@ for (const file of commandFiles) {
 		console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
 	}
 }
-console.log(process.env.OPENAI_API_KEY);
 client.login(token);
